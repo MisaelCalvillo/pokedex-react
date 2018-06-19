@@ -5,7 +5,21 @@ import Navbar from './components/Navbar/Navbar';
 import Pokemon from './components/Pokemon/Pokemon';
 
 import axios from 'axios';
-console.log(axios);
+
+
+// Endpoint para obtener un Pokemon
+axios.get("https://pokeapi.co/api/v2/pokemon/spearow/")
+.then(function (response) {
+  // Jala la imagen
+  console.log(response.data.sprites.front_shiny
+  );
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+
 class App extends Component {
   render() {
     return (
